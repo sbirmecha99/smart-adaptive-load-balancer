@@ -1,6 +1,7 @@
 package routing
 
 import (
+	"fmt"
 	"sync"
 
 	"github.com/sbirmecha99/smart-adaptive-load-balancer/internal/core"
@@ -28,6 +29,7 @@ func (rr *RoundRobinRouter) GetNextAvailableServer(
 
 	n := len(backends)
 	if n == 0 {
+		fmt.Println("No Servers Present")
 		return nil
 	}
 
